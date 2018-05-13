@@ -1,0 +1,46 @@
+@import './palette';
+
+.Page {
+
+  &__title {
+    text-align: center;
+    padding: 2rem 2rem 2rem 2rem;
+
+    & > h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    & > h2 {
+      font-size: 1.5rem;
+      margin: 0;
+      font-style: italic;
+    }
+  }
+
+  .Section {
+    padding: 1rem 2rem 1rem 2rem;
+
+    &:nth-child(odd) {
+      background-color: $background-color;
+    }
+
+    &:nth-child(even) {
+      background-color: lighten($background-color, 10%);
+    }
+
+
+    &__title {
+      & > h1 {
+        font-size: 2rem;
+        margin: 0;
+      }
+
+      & > h2 {
+        font-size: 1.5rem;
+        margin: 0;
+        font-style: italic;
+      }
+    }
+  }
+}

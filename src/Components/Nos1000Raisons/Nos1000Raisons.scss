@@ -1,0 +1,16 @@
+@import '../../Style/palette';
+
+.Nos1000Raisons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10vw 0 10vw;
+
+  .title {
+    color: $secondary-color
+  }
+
+  .gallery {
+    margin-top: 1rem;
+  }
+}

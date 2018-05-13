@@ -1,0 +1,36 @@
+@import 'Style/palette.scss';
+@import 'Style/page.scss';
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  background-color: $background-color;
+  color: white;
+}
+
+div#root {
+  display: flex;
+  flex-grow: 1;
+}
+
+body {
+  display: flex;
+  flex-grow: 1;
+  margin: 0;
+  width: 100%;
+}
+
+.fam {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  margin-bottom: 10px !important;
+}

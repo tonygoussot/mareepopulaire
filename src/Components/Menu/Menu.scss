@@ -1,0 +1,37 @@
+@import '../../style/palette';
+
+.Menu {
+    display: flex;
+    margin: 10px 0px 10px 0px;
+
+    @media(orientation: portrait){
+        flex-direction: column;
+        align-items: center;
+
+        &__link {
+            width: 80%;
+            &:not(:nth-child(1)) {
+                margin-top: 10px;
+            }
+            &:hover {
+                background-color: $secondary-color;
+            }
+        }
+    }
+
+    @media(orientation: landscape) {
+        flex-direction: row;
+        justify-content: center;
+
+        &__link {
+            &:not(:nth-child(1)) {
+                margin-left: 5px;
+            }
+            &:hover {
+                background-color: $secondary-color;
+            }
+        }
+    }
+
+
+}

@@ -1,0 +1,20 @@
+# [START runtime]
+runtime: nodejs
+env: flex
+# [END runtime]
+
+# [START handlers]
+handlers:
+ - url: /
+   static_files: build/index.html
+   upload: build/index.html
+
+ - url: /(.*)
+   static_files: build/static/
+   upload: build/(.*)
+# [END handlers]
+
+# [START skip_files]
+skip_files:
+- ./yarn.lock$
+# [END skip_files]
