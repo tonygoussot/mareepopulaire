@@ -1,0 +1,120 @@
+---
+---
+
+// COLORS
+$background-color: #ffd57e;
+$secondary-color: #FF1744;
+$tertiary-color: #26A69A; // default materialize color for buttons
+$fourth-color: #03A9F4;
+
+html, body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  background-color: $background-color;
+  color: white;
+}
+
+div#root {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+body {
+  display: flex;
+  flex-grow: 1;
+  margin: 0;
+  width: 100%;
+}
+
+/**
+ * Header
+ */
+
+.Header-header {
+  height: 150px;
+}
+
+.Header-title {
+  text-transform: uppercase;
+}
+
+.Header-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100px;
+  align-items: center;
+}
+
+@media (min-width: 400px) {
+  .Header-title {
+    font-family: 'Oswald';
+    font-size: 2.5em;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+
+  .Header-sub {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    text-transform: uppercase;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .Header-title {
+    font-family: 'Oswald';
+    font-size: 2.2em;
+    text-transform: uppercase;
+  }
+
+  .Header-sub {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    text-transform: uppercase;
+    margin-top: 0;
+  }
+}
+
+/**
+/* Menu
+ */
+
+.Menu {
+    display: flex;
+    margin: 10px 0px 10px 0px;
+
+    @media(orientation: portrait){
+        flex-direction: column;
+        align-items: center;
+
+        &__link {
+            width: 80%;
+            &:not(:nth-child(1)) {
+                margin-top: 10px;
+            }
+            &:hover {
+                background-color: $secondary-color;
+            }
+        }
+    }
+
+    @media(orientation: landscape) {
+        flex-direction: row;
+        justify-content: center;
+
+        &__link {
+            &:not(:nth-child(1)) {
+                margin-left: 5px;
+            }
+            &:hover {
+                background-color: $secondary-color;
+            }
+        }
+    }
+}
