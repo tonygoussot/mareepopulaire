@@ -14,8 +14,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta name="theme-color" content="#000000">
-    <link rel="shortcut icon" href="/public/favicon.ico">
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="shortcut icon" href="{{ site.baseurl }}/public/favicon.ico">
+    <link rel="stylesheet" href="{{ site.baseurl }}/public/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
@@ -49,8 +49,8 @@
     </header>
 
     <div class="Menu">
-      <a class="Menu__link waves-effect waves-light btn" href="/">Infos</a>
-      <a class="Menu__link waves-effect waves-light btn" href="/public/files/affiche_unitaire.pdf">Télécharger l'affiche unitaire</a>
+      <a class="Menu__link waves-effect waves-light btn" href="{{ site.baseurl }}/">Infos</a>
+      <a class="Menu__link waves-effect waves-light btn" href="{{ site.baseurl }}/public/files/affiche_unitaire.pdf">Télécharger l'affiche unitaire</a>
     </div>
       {{ content }}
   </div>
