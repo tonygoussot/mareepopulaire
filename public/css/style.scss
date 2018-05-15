@@ -167,6 +167,36 @@ img {
     margin: 10px;
 }
 
+.Article__action.rs {
+    background-color: #89c7b6;
+    color: #89c7b6;
+}
+.Article__action {
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-color: #ad84c7;
+    text-transform: uppercase;
+    display: -ms-flexbox;
+    display: flex;
+    cursor: pointer;
+    padding: 5px;
+    color: #ad84c7;
+}
+
+.Article__action--link {
+    color: #fff;
+}
+
+.Article__action--link, .contacts__action--link {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 .card {
   box-shadow: 0 4px 10px 0 rgba(0,0,0,.2),0 4px 20px 0 rgba(0,0,0,.19);
   border-radius: 2px;
