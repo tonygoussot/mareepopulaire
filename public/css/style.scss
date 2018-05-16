@@ -174,7 +174,7 @@ img {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  background-color: $tertiary-color;
+  background-color: #999;
 }
 
 
@@ -195,6 +195,7 @@ img {
   display: block;
   width: 100%;
   padding: 15px;
+  color: $tertiary-color;
 }
 
 .Article__action--link:hover {
