@@ -2,8 +2,8 @@
 ---
 
 // COLORS
-$background-color: #7a3470;
-$secondary-color: #8e95a7;
+$background-color: #823968;
+$secondary-color: #9da5b3;
 $tertiary-color: rgb(183, 27, 84); // default materialize color for buttons
 $fourth-color: #03A9F4;
 
@@ -206,6 +206,11 @@ img {
 .Article__action--link svg {
   display: inline;
   margin-right: 0.5em;
+}
+
+.Appel__intro {
+  font-weight: bold;
+  font-variant: small-caps;
 }
 
 .card {
