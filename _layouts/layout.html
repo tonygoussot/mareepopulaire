@@ -35,6 +35,10 @@
             integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+    {% for item in page.opengraph %}
+    <meta property="{{ item[0] }}" content="{{ item[1] }}" />
+    {% endfor %}
+
 
     <title>La Marée populaire</title>
 </head>
