@@ -4,7 +4,7 @@
 // COLORS
 $background-color: #7a3470;
 $secondary-color: #8e95a7;
-$tertiary-color: #26a69a; // default materialize color for buttons
+$tertiary-color: rgb(183, 27, 84); // default materialize color for buttons
 $fourth-color: #03A9F4;
 
 html, body {
@@ -33,6 +33,14 @@ body {
 img {
   width: 100%;
   height: auto;
+}
+
+.btn, .btn-large, .btn-small {
+  background-color: $tertiary-color;
+}
+
+.btn:hover, .btn-large:hover, .btn-small:hover {
+  background-color: lighten($tertiary-color, 10%);
 }
 
 /**
@@ -88,9 +96,6 @@ img {
       &:not(:nth-child(1)) {
         margin-top: 10px;
       }
-      &:hover {
-        background-color: $secondary-color;
-      }
     }
   }
 
@@ -101,9 +106,6 @@ img {
     &__link {
       &:not(:nth-child(1)) {
         margin-left: 5px;
-      }
-      &:hover {
-        background-color: $secondary-color;
       }
     }
   }
@@ -155,6 +157,27 @@ img {
   margin: 10px;
 }
 
+.Article__content--signataires {
+  text-justify: none;
+}
+
+.Signataires {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Signataires li {
+  color: white;
+  display: inline-block;
+  margin: 5px;
+  padding: 5px 8px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: $tertiary-color;
+}
+
+
 .Article__action {
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
@@ -182,7 +205,6 @@ img {
   display: inline;
   margin-right: 0.5em;
 }
-
 
 .card {
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .2), 0 4px 20px 0 rgba(0, 0, 0, .19);
