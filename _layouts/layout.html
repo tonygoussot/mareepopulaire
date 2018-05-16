@@ -36,7 +36,7 @@
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
     {% for item in page.opengraph %}
-    <meta property="{{ item[0] }}" content="{{ item[1] }}" />
+    <meta property="og:{{ item[0] }}" content="{{ item[1] }}" />
     {% endfor %}
 
 
