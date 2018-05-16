@@ -1,11 +1,19 @@
 ---
 ---
+%cursive {
+  text-transform: uppercase;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+  letter-spacing: -0.045em;
+}
 
 // COLORS
 $background-color: #823968;
 $secondary-color: #9da5b3;
 $tertiary-color: rgb(183, 27, 84); // default materialize color for buttons
 $fourth-color: #03A9F4;
+
+$column-width: 400px;
 
 html, body {
   display: flex;
@@ -44,6 +52,10 @@ img {
   background-color: lighten($tertiary-color, 10%);
 }
 
+.btn:focus, .btn-large:focus, .btn-small:focus {
+  background-color: darken($tertiary-color, 10%);
+}
+
 /**
  * Header
  */
@@ -53,12 +65,9 @@ img {
 }
 
 .Header-title {
-  text-transform: uppercase;
-  font-family: 'Amatic SC', cursive;
-  font-weight: bold;
+  @extend %cursive;
   font-size: 3em;
   margin-bottom: 0;
-  letter-spacing: -2px;
 }
 
 .Header-header {
@@ -125,12 +134,12 @@ img {
 }
 
 .intro-col {
-  max-width: 400px;
+  max-width: $column-width;
   margin: 0 5px;
 }
 
 .Article {
-  max-width: 400px;
+  max-width: $column-width;
   background-color: #fff;
   color: #000;
 }
@@ -140,15 +149,12 @@ img {
 }
 
 .Article__title {
-  text-transform: uppercase;
-  font-family: 'Amatic SC', cursive;
-  font-weight: bold;
-  letter-spacing: -1px;
+  @extend %cursive;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
   background-color: $secondary-color;
   color: #fff;
-  padding-left: 10px;
+  padding-left: 15px;
   font-size: 1.8em;
 }
 
@@ -177,7 +183,6 @@ img {
   border-radius: 5px;
   background-color: #999;
 }
-
 
 .Article__action {
   border-bottom-left-radius: 2px;
@@ -209,8 +214,15 @@ img {
 }
 
 .Appel__intro {
-  font-weight: bold;
+  line-height: 1.2;
+  text-justify: none;
   font-variant: small-caps;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+.Appel__intro__titre {
+  font-size: 1.4em;
 }
 
 .card {
