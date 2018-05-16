@@ -27,6 +27,7 @@ body {
   display: flex;
   flex-grow: 1;
   margin: 0;
+  padding: 10px;
   width: 100%;
 }
 
@@ -124,12 +125,12 @@ img {
 }
 
 .intro-col {
-  width: 400px;
+  max-width: 400px;
   margin: 0 5px;
 }
 
 .Article {
-  width: 400px;
+  max-width: 400px;
   background-color: #fff;
   color: #000;
 }
