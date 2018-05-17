@@ -35,10 +35,10 @@
             integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-    <meta property="og:url" content="{{site.url}}{{ page.url }}" />
+    <meta property="og:url" content="{{ site.url | replace: 'http://', 'https://' }}{{ page.url }}" />
     {% for item in page.opengraph %}
         {% if item.url %}
-            <meta property="og:{{ item.key }}" content="{{ site.url }}{{ item.value }}" />
+            <meta property="og:{{ item.key }}" content="{{ site.url | replace: 'http://', 'https://' }}{{ item.value }}" />
         {% else %}
             <meta property="og:{{ item.key }}" content="{{ item.value }}" />
         {% endif %}
