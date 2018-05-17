@@ -38,9 +38,9 @@
     <meta property="og:url" content="{{ site.url | replace: 'http://', 'https://' }}{{ page.url }}" />
     {% for item in page.opengraph %}
         {% if item.url %}
-            <meta property="og:{{ item.key }}" content="{{ site.url | replace: 'http://', 'https://' }}{{ item.value }}" />
+            <meta property="{{ item.key }}" content="{{ site.url | replace: 'http://', 'https://' }}{{ item.value }}" />
         {% else %}
-            <meta property="og:{{ item.key }}" content="{{ item.value }}" />
+            <meta property="{{ item.key }}" content="{{ item.value }}" />
         {% endif %}
     {% endfor %}
 
