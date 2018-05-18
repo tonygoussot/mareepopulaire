@@ -5,6 +5,9 @@ social_title: La Marée populaire
 social_type: website
 social_description: Pour l’égalité, la justice sociale et la solidarité, marée populaire le samedi 26 mai
 ---
+<link rel="stylesheet" href="{{ site.baseurl }}/public/leaflet/leaflet.css">
+<script src="{{ site.baseurl }}/public/leaflet/leaflet.js"></script>
+
 <div class="Intro">
     <div class="intro-col">
         <div class="Article card">
@@ -71,6 +74,14 @@ social_description: Pour l’égalité, la justice sociale et la solidarité, ma
     <div class="intro-col">
         <div class="Article card">
             <div class="Article__title">
+                La marée populaire près de chez vous
+            </div>
+            <div class="Article__content">
+                <div class="Carte" id="carte-marees"></div>
+            </div>
+        </div>
+        <div class="Article card">
+            <div class="Article__title">
                 Partagez ce site sur les réseaux sociaux
             </div>
             <div class="Article__content Social">
@@ -87,13 +98,14 @@ social_description: Pour l’égalité, la justice sociale et la solidarité, ma
                     Twitter
                 </a>
                 <script>
-                    function socialClick(e) {
-                      window.open(e.currentTarget.href, 'social', 'width=600,height=600,menubar=no,toolbar=no');
-                      e.preventDefault();
-                    }
-                    document.querySelectorAll('.Social__Button').forEach(function(link) {
-                      link.addEventListener('click', socialClick);
-                    })
+                  function socialClick(e) {
+                    window.open(e.currentTarget.href, 'social', 'width=600,height=600,menubar=no,toolbar=no');
+                    e.preventDefault();
+                  }
+
+                  document.querySelectorAll('.Social__Button').forEach(function (link) {
+                    link.addEventListener('click', socialClick);
+                  })
                 </script>
             </div>
         </div>
@@ -137,3 +149,19 @@ social_description: Pour l’égalité, la justice sociale et la solidarité, ma
         </div>
     </div>
 </div>
+<script>
+  var map = L.map('carte-marees').setView([46.76996843356982, 3.251953125], 5);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'Contributeurs <a href="https://www.openstreemap.org">OpenStreetMap</a>',
+    maxZoom: 17
+  }).addTo(map);
+  var events = {{ site.data.carte | jsonify }};
+
+  events.forEach(function(event) {
+    var marker = L.marker([event.coordinates.lat, event.coordinates.lon]).addTo(map);
+    marker.bindPopup(
+      '<h3>La marée populaire ' + event.title + '</h3>' +
+            '<p>' + event.description + '</p>'
+    );
+  })
+</script>

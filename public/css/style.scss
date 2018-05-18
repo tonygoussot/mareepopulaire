@@ -278,3 +278,18 @@ a {
 .SocialImage--small {
   width: .9em;
 }
+
+.Carte {
+  height: 350px;
+}
+
+.Carte h3 {
+  @extend %cursive;
+  font-size: 2em;
+  margin-bottom: 0 !important;
+}
+
+.Carte p {
+  font-size: 1.3em;
+  margin-top: 0 !important;
+}
