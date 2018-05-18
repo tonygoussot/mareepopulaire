@@ -1,0 +1,20 @@
+- title: à Paris
+  description: 14h30 - Gare de l'Est
+  coordinates:
+    lon: 2.3579005134785405
+    lat: 48.8761996006825
+- title: à Lille
+  description: 14h30 - Porte de Paris
+  coordinatates:
+    lon: 3.0686817124654304
+    lat: 50.62995047035339
+- title: à Marseille
+  description: 14h - Angle Vieux Port / Canebière
+  coordinates:
+    lon: 5.380341999999998
+    lat: 43.29730499999999
+- title: à Toulouse
+  description: 14h - Place Jeanne d'Arc
+  coordinates:
+    lon: 1.4465279999999974
+    lat: 43.609084999999965
