@@ -18,3 +18,43 @@
   coordinates:
     lon: 1.4465279999999974
     lat: 43.609084999999965
+- title: à Montpellier
+  description: 10H30 - Place du Peyrou
+  coordinates:
+    lat: 43.6112564
+    lon: 3.8685561
+- title: à Auxerre
+  description: 14h - Place de l'arquebuse
+  coordinates:
+    lat: 47.792542
+    lon: 3.563023
+- title: à Nancy
+  description: 14h - Place Dombasle
+  coordinates:
+    lat: 48.6916553
+    lon: 6.1758377
+- title: à Strasbourg
+  description: 14h - Place Kléber
+  coordinates:
+    lat: 48.5832721
+    lon: 7.7429847
+- title: à Clermont-Ferrand
+  description: 14h - Place de Jaude
+  coordinates:
+    lat: 45.7765829
+    lon: 3.0802765
+- title: à Bordeaux
+  description: 14H00 - Place Pey Berland
+  coordinates:
+    lat: 44.8380313
+    lon: -0.5795231
+- title: à Pau
+  description: 10H30 - Place de Verdun
+  coordinates:
+    lat: 43.2977998
+    lon: -0.3800137
+- title: à Grenoble
+  description: 10H00 - Place de la Gare
+  coordinates:
+    lat: 45.1912091
+    lon: 5.713084
