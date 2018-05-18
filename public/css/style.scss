@@ -44,6 +44,11 @@ img {
   height: auto;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .btn, .btn-large, .btn-small {
   background-color: $tertiary-color;
 }
@@ -131,6 +136,7 @@ img {
   display: flex;
   -ms-flex-wrap: wrap-reverse;
   flex-wrap: wrap-reverse;
+  justify-content: center;
 }
 
 .intro-col {
@@ -142,6 +148,7 @@ img {
   max-width: $column-width;
   background-color: #fff;
   color: #000;
+  overflow: auto;
 }
 
 .Article__content, .Article__title {
@@ -208,7 +215,7 @@ img {
   background-color: #EEE;
 }
 
-.Article__action--link svg {
+.Article__action--link img {
   display: inline;
   margin-right: 0.5em;
 }
@@ -228,4 +235,46 @@ img {
 .card {
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .2), 0 4px 20px 0 rgba(0, 0, 0, .19);
   border-radius: 2px;
+}
+
+.Social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-size: 14px;
+  overflow: auto;
+}
+
+.Social__Button {
+  text-align: center;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 16px;
+  margin: 5px;
+  flex: 1 1 0;
+  min-width: 150px;
+}
+
+.Social__Button--fa {
+  background-color: #3b5998;
+}
+
+.Social__Button--tw {
+  background-color: #1DA1F2;
+}
+
+.SocialImage {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  width: auto;
+  overflow: visible;
+  vertical-align: -.125em;
+}
+
+.SocialImage--small {
+  width: .9em;
 }

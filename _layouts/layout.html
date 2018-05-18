@@ -16,8 +16,6 @@
     <meta name="theme-color" content="#000000">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/public/css/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Amatic+SC"
           rel="stylesheet">
 
@@ -31,21 +29,34 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
 
-    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
-            integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    {% capture absolute_prefix %}{{ site.url | replace: 'http://', 'https://' }}{{ site.baseurl }}{% endcapture %}
 
-    <meta property="og:url" content="{{ site.url | replace: 'http://', 'https://' }}{{ page.url }}" />
-    {% for item in page.opengraph %}
-        {% if item.url %}
-            <meta property="{{ item.key }}" content="{{ site.url | replace: 'http://', 'https://' }}{{ item.value }}" />
-        {% else %}
-            <meta property="{{ item.key }}" content="{{ item.value }}" />
-        {% endif %}
-    {% endfor %}
+    <meta property="og:url" content="{{ absolute_prefix }}{{ page.url }}"/>
+    {% if page.social_type %}
+    <meta property="og:type" content="{{ page.social_type }}"/>
+    {% else %}
+    <meta property="og:type" content="article" />
+    {% endif %}
+    {% if page.social_title %}
+    <meta property="og:title" content="{{ page.social_title }}"/>
+    {% else %}
+    <meta property="og:title" content="{{ page.title }}"/>
+    {% endif %}
+    {% if page.social_description %}
+    <meta property="og:description" content="{{ page.social_description }}"/>
+    {% endif %}
 
-    <meta property="twitter:site" content="{{ site.twitter_username }}" />
+    <meta property="og:image" content="{{ absolute_prefix }}/public/img/partage-fb-2.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
+    {% if page.social_twitter_card %}
+    <meta property="twitter:card" content="{{ page.social_twitter_card }}"/>
+    {% else %}
+    <meta property="twitter:card" content="summary"/>
+    {% endif %}
+    <meta property="twitter:image" content="{{ absolute_prefix }}/public/img/partage-twitter.png"/>
+    <meta property="twitter:site" content="{{ site.twitter_username }}"/>
 
     <title>La Marée populaire</title>
 </head>
