@@ -63,3 +63,13 @@
   coordinates:
     lat: 47.2151799
     lon: -1.5510121
+- title: à Toulon
+  description: 14h30 - Place de la Liberté
+  coordinates:
+    lat: 43.1263198
+    lon: 5.9286764
+- title: à Rouen
+  description: 14h30 - Cours Clémenceau
+  coordinates:
+    lat: 49.4342338
+    lon: 1.0865472
