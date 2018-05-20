@@ -77,4 +77,10 @@
   description: 14h30 - Devant la gare
   coordinates:
     lat: 49.109802
-    lon: 6.177221  
+    lon: 6.177221
+- title: à Compiègne
+  description: 10h - Cours Guynemer
+  coordinates:
+    lat: 49.421686
+    lon: 2.828345
+ 
