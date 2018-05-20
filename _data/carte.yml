@@ -128,4 +128,14 @@
   coordinates:
     lat: 44.022125
     lon: 1.35296
+- title: à Albi
+  description: 10h30 - Place du Vigan
+  coordinates:
+    lat: 43.925085
+    lon: 2.148641
+- title: à Castre
+  description: 10h30 - Place Soult
+  coordinates:
+    lat: 43.606214
+    lon: 2.241295
     
