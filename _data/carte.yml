@@ -168,3 +168,23 @@
   coordinates: 
     lat: 44.203142
     lon: 0.616363
+- title: à Blois
+  description: 14h - Place de la Résistance
+  coordinates: 
+    lat: 47.586092
+    lon: 1.335947
+- title: à Montluçon
+  description: 15h - Place Jean Dormoy
+  coordinates: 
+    lat: 46.346381
+    lon: 2.598108
+- title: à Moulins
+  description: 15h - Place d'Allier
+  coordinates: 
+    lat: 46.564517
+    lon: 3.329934
+- title: à Vichy
+  description: 15h - Place de la Poste
+  coordinates: 
+    lat: 46.131859
+    lon: 3.425488
