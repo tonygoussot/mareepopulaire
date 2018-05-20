@@ -78,9 +78,8 @@
   coordinates:
     lat: 47,21805241016608
     lon: -1,5543937683105469
-- title: à Compiègne
-  description: 10h - Cours Guynemer
+- title: à Metz
+  description: 14h30 - Devant la gare
   coordinates:
-    lat: 49,417674012348385
-    lon: 2,8262329101562504
-    
+    lat: 49,10861573617841
+    lon: 6,176354885101318    
