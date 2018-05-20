@@ -143,3 +143,19 @@
   coordinates:
     lat: 48.066152 
     lon: -2.967056
+- title: à Brest
+  description: 15h - Place de la Liberté
+  coordinates: 
+    lat: 48.390394
+    lon: -4.486076
+- title: à Puy-en-Velay
+  description: 11h - Place de la Liberté
+  coordinates: 
+    lat: 45.042768
+    lon: 3.882936
+- title: à Cherbourg
+  description: 10h - Gare de Cherbourg
+  coordinates: 
+    lat: 49.628822
+    lon: -1.618811
+
