@@ -88,3 +88,9 @@
   coordinates:
     lat: 48.507593
     lon: 2.765072
+- title: à Metz
+  description: 14h30 - Gare de Metz
+  coordinates:
+    lat: 49.109802
+    lon: 6.177221
+    
