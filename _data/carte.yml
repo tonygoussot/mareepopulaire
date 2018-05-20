@@ -83,4 +83,9 @@
   coordinates:
     lat: 49.421686
     lon: 2.828345
- 
+ - title: à Saint-Brieuc
+  description: 10h30 – Gare de Saint-Brieuc
+  coordinates:
+    lat: 48.507593
+    lon: -2.765072
+    
