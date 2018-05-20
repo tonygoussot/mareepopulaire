@@ -233,3 +233,8 @@
   coordinates:
     lat: 45.679534
     lon: 5.925005
+- title: au Mans
+  description: 10h - Départ à l'angle des rues Bollée et Chanzy
+  coordinates:
+    lat: 48.0041203
+    lon: 0.2005882
