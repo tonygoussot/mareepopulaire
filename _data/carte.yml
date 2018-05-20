@@ -88,11 +88,6 @@
   coordinates:
     lat: 48.51418
     lon: -2.765835
-- title: à Metz
-  description: 14h30 - Gare de Metz
-  coordinates:
-    lat: 49.109802
-    lon: 6.177221
 - title: à Chambéry
   description: 10h30 - Place de l'Hôtel de ville
   coordinates:
@@ -141,105 +136,100 @@
 - title: à Pontivy
   description: 10h - La Plaine
   coordinates:
-    lat: 48.066152 
+    lat: 48.066152
     lon: -2.967056
 - title: à Brest
   description: 15h - Place de la Liberté
-  coordinates: 
+  coordinates:
     lat: 48.390394
     lon: -4.486076
 - title: à Puy-en-Velay
   description: 11h - Place de la Liberté
-  coordinates: 
+  coordinates:
     lat: 45.042768
     lon: 3.882936
 - title: à Cherbourg
   description: 10h - Gare de Cherbourg
-  coordinates: 
+  coordinates:
     lat: 49.628822
     lon: -1.618811
 - title: à Abbeville
-  description: 14h30 - Centre ville 
-  coordinates: 
+  description: 14h30 - Centre ville
+  coordinates:
     lat: 50.105467
     lon: 1.836833
 - title: à Agen
   description: 14h30 - Place du Pin
-  coordinates: 
+  coordinates:
     lat: 44.203142
     lon: 0.616363
 - title: à Blois
   description: 14h - Place de la Résistance
-  coordinates: 
+  coordinates:
     lat: 47.586092
     lon: 1.335947
 - title: à Montluçon
   description: 15h - Place Jean Dormoy
-  coordinates: 
+  coordinates:
     lat: 46.346381
     lon: 2.598108
 - title: à Moulins
   description: 15h - Place d'Allier
-  coordinates: 
+  coordinates:
     lat: 46.564517
     lon: 3.329934
 - title: à Vichy
   description: 15h - Place de la Poste
-  coordinates: 
+  coordinates:
     lat: 46.131859
     lon: 3.425488
 - title: à Saint-Etienne
   description: 10h30 - Nouvelle CAF
-  coordinates: 
+  coordinates:
     lat: 45.439695
     lon: 4.387178
 - title: à Annecy
   description: 14h - Préfecture
-  coordinates: 
+  coordinates:
     lat: 45.899089
     lon: 6.129541
 - title: à Besançon
-  description: 10h - Trois départ :la gare SNCF, un EHPAD, le jardin botanique de l'Université - Convergence vers le centre ville
-  coordinates: 
+  description: 10h - Trois départ : la gare SNCF, un EHPAD, le jardin botanique de l'Université - Convergence vers le centre ville
+  coordinates:
     lat: 47.237829
     lon: 6.024054
 - title: à Cahors
   description: 10h30 - Place Mitterrand
-  coordinates: 
+  coordinates:
     lat: 44.447523
     lon: 1.441989
 - title: à Dijon
   description: 10h30 - Place Mitterrand
-  coordinates: 
-    lat: 47.322047
-    lon: 5.04148
-- title: à Dijon
-  description: 11h - Place de la République
-  coordinates: 
+  coordinates:
     lat: 47.322047
     lon: 5.04148
 - title: à Ivry-sur-Seine
   description: 11h30 - Mairie
-  coordinates: 
+  coordinates:
     lat: 48.813055
     lon: 2.38822
 - title: à Le Havre
-  description: 15h - Hôtel de ville 
-  coordinates: 
+  description: 15h - Hôtel de ville
+  coordinates:
     lat: 49.49437
     lon: 0.107929
 - title: à Montreuil
-  description: 11h - Mairie 
-  coordinates: 
+  description: 11h - Mairie
+  coordinates:
     lat: 48.863812
     lon: 2.448451
 - title: à Paris 19eme
-  description: 12h - La Rotonde 
-  coordinates: 
+  description: 12h - La Rotonde
+  coordinates:
     lat: 48.882376
     lon: 2.382292
 - title: à Le Biollay
-  description: 12h - La Rotonde 
-  coordinates: 
+  description: 12h - La Rotonde
+  coordinates:
     lat: 45.679534
     lon: 5.925005
