@@ -94,7 +94,7 @@
     lat: 49.109802
     lon: 6.177221
 - title: à Chambéry
-  description: 10h30 - place de l'Hôtel de ville
+  description: 10h30 - Place de l'Hôtel de ville
   coordinates:
     lat: 45.566426
     lon: 5.92069
@@ -193,3 +193,53 @@
   coordinates: 
     lat: 45.439695
     lon: 4.387178
+- title: à Annecy
+  description: 14h - Préfecture
+  coordinates: 
+    lat: 45.899089
+    lon: 6.129541
+- title: à Besançon
+  description: 10h - Trois départ :la gare SNCF, un EHPAD, le jardin botanique de l'Université - Convergence vers le centre ville
+  coordinates: 
+    lat: 47.237829
+    lon: 6.024054
+- title: à Cahors
+  description: 10h30 - Place Mitterrand
+  coordinates: 
+    lat: 44.447523
+    lon: 1.441989
+- title: à Dijon
+  description: 10h30 - Place Mitterrand
+  coordinates: 
+    lat: 47.322047
+    lon: 5.04148
+- title: à Dijon
+  description: 11h - Place de la République
+  coordinates: 
+    lat: 47.322047
+    lon: 5.04148
+- title: à Ivry-sur-Seine
+  description: 11h30 - Mairie
+  coordinates: 
+    lat: 48.813055
+    lon: 2.38822
+- title: à Le Havre
+  description: 15h - Hôtel de ville 
+  coordinates: 
+    lat: 49.49437
+    lon: 0.107929
+- title: à Montreuil
+  description: 11h - Mairie 
+  coordinates: 
+    lat: 48.863812
+    lon: 2.448451
+- title: à Paris 19eme
+  description: 12h - La Rotonde 
+  coordinates: 
+    lat: 48.882376
+    lon: 2.382292
+- title: à Le Biollay
+  description: 12h - La Rotonde 
+  coordinates: 
+    lat: 45.679534
+    lon: 5.925005
