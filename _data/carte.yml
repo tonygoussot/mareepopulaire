@@ -204,11 +204,6 @@
     lat: 44.447523
     lon: 1.441989
 - title: à Dijon
-  description: 10h30 - Place Mitterrand
-  coordinates: 
-    lat: 47.322047
-    lon: 5.04148
-- title: à Dijon
   description: 11h - Place de la République
   coordinates: 
     lat: 47.322047
