@@ -73,13 +73,8 @@
   coordinates:
     lat: 49.4342338
     lon: 1.0865472
-- title: à Nantes
-  description: 14h30 - Miroir d'eau
-  coordinates:
-    lat: 47,21805241016608
-    lon: -1,5543937683105469
 - title: à Metz
   description: 14h30 - Devant la gare
   coordinates:
-    lat: 49,10861573617841
-    lon: 6,176354885101318    
+    lat: 49.109802
+    lon: 6.177221  
