@@ -93,4 +93,20 @@
   coordinates:
     lat: 49.109802
     lon: 6.177221
-    
+- title: à Chambéry
+  description: 10h30 - place de l'Hôtel de ville
+  coordinates:
+    lat: 45.566426
+    lon: 5.92069
+- title: à Privas
+  description: 10h30 - Préfecture
+  coordinates:
+    lat: 44.735742
+    lon: 4.600203
+ - title: à Amiens
+  description: 14h - Maison de la culture d'Amiens
+  coordinates:
+    lat: 49.894081
+    lon: 2.291769
+
+ 
