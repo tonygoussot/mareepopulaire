@@ -19,7 +19,7 @@
     lon: 1.4465279999999974
     lat: 43.609084999999965
 - title: à Montpellier
-  description: 10H30 - Place du Peyrou
+  description: 10h30 - Place du Peyrou
   coordinates:
     lat: 43.6112564
     lon: 3.8685561
@@ -39,22 +39,22 @@
     lat: 48.5832721
     lon: 7.7429847
 - title: à Clermont-Ferrand
-  description: 14h - Place du 1er mai
+  description: 14h - Place de Jaude
   coordinates:
     lat: 45.7765829
     lon: 3.0802765
 - title: à Bordeaux
-  description: 14H00 - Place Pey Berland
+  description: 14h - Place Pey Berland
   coordinates:
     lat: 44.8380313
     lon: -0.5795231
 - title: à Pau
-  description: 10H30 - Place de Verdun
+  description: 10h30 - Place de Verdun
   coordinates:
     lat: 43.2977998
     lon: -0.3800137
 - title: à Grenoble
-  description: 10H00 - Place de la Gare
+  description: 10h - Place de la Gare
   coordinates:
     lat: 45.1912091
     lon: 5.713084
@@ -184,7 +184,7 @@
     lat: 46.131859
     lon: 3.425488
 - title: à Saint-Etienne
-  description: 10h30 - Nouvelle CAF
+  description: 10h30 - Nouvelle CAF, avenue Emile Goubet
   coordinates:
     lat: 45.439695
     lon: 4.387178
@@ -239,7 +239,7 @@
     lat: 48.0041203
     lon: 0.2005882
 - title: à Reims
-  description: 14h30 - Union Locale
+  description: 14h30 - Devant la maison des syndicats
   coordinates:
     lat: 49.258329
     lon:  4.031696
@@ -264,7 +264,7 @@
     lat: 45.833619
     lon: 1.261105
 - title: à Valence
-  description: 14h - Gare de Valence
+  description: 14h - Gare de Valence / Rassemblement Champ de Mars
   coordinates:
     lat: 44.933393
     lon: 4.89236
@@ -273,4 +273,33 @@
   coordinates:
     lat: 43.184277
     lon: 3.003078
-
+- title: à Aubenas
+  description: 10h - Rond Point Ponson Moulon
+  coordinates:
+    lat: 44.620909
+    lon: 4.389863
+- title: à Boulogne-sur-Mer
+  description: 9h30 - Place d'Argentine
+  coordinates:
+    lat: 50.725231
+    lon: 1.613334
+- title: à Le Puy-en-Velay
+  description: 11h - Place Cadelade
+  coordinates:
+    lat: 45.042768
+    lon:  3.882936
+- title: à Lyon
+  description: 11h - Quais du Rhône 
+  coordinates: 
+    lat: 45.764043
+    lon: 4.835659
+- title: à Nevers
+  description: 10h - Place de la Résistance 
+  coordinates:
+    lat: 46.990896
+    lon: 3.162845
+- title: à Saint-Nazaire
+  description: 13h - Place Amérique Latine
+  coordinates:
+    lat: 47.273498
+    lon: -2.213848
