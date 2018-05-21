@@ -238,3 +238,13 @@
   coordinates:
     lat: 48.0041203
     lon: 0.2005882
+- title: à Reims
+  description: 14h30 - Union Locale
+  coordinates:
+    lat: 49.258329
+    lon:  4.031696
+- title: à Brive-la-Gaillarde
+  description: 17h - Jardin de la Guierle
+  coordinates:
+    lat: 45.159555
+    lon: 1.533937
