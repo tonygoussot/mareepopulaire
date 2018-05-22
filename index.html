@@ -6,7 +6,10 @@ social_type: website
 social_description: Pour l’égalité, la justice sociale et la solidarité, marée populaire le samedi 26 mai
 ---
 <link rel="stylesheet" href="{{ site.baseurl }}/public/leaflet/leaflet.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/public/leaflet/geosearch.css">
 <script src="{{ site.baseurl }}/public/leaflet/leaflet.js"></script>
+<script src="{{ site.baseurl }}/public/leaflet/GeoSearch.js"></script>
+
 
 <div class="Intro">
     <div class="intro-col">
@@ -155,13 +158,66 @@ social_description: Pour l’égalité, la justice sociale et la solidarité, ma
     attribution: 'Contributeurs <a href="https://www.openstreemap.org">OpenStreetMap</a>',
     maxZoom: 17
   }).addTo(map);
+
   var events = {{ site.data.carte | jsonify }};
 
-  events.forEach(function(event) {
-    var marker = L.marker([event.coordinates.lat, event.coordinates.lon]).addTo(map);
-    marker.bindPopup(
+  events.forEach(function (event) {
+    event.marker = L.marker([event.coordinates.lat, event.coordinates.lon]).addTo(map);
+    event.marker.bindPopup(
       '<h3>La marée populaire ' + event.title + '</h3>' +
-            '<p>' + event.description + '</p>'
+      '<p>' + event.description + '</p>'
     );
-  })
+  });
+
+  var rad = Math.PI / 180;
+
+  var provider = new GeoSearch.OpenStreetMapProvider();
+  var control = new GeoSearch.GeoSearchControl({
+    provider: provider,
+    searchLabel: 'Chercher une marée',
+    notFoundMessage: 'Désolé, votre adresse n\'a pas été trouvée.'
+  });
+
+  control.showResult = function(result, options) {
+    var lat = result.y * rad;
+    var cosLat = Math.cos(lat), sinLat = Math.sin(lat);
+
+    var minEvent, minDistance = Infinity;
+
+    var distances = events.forEach(function(e) {
+      var d = greatCircleAngle(result.x, result.y, e.coordinates.lon, e.coordinates.lat, cosLat, sinLat);
+      if (d < minDistance) {
+        minDistance = d;
+        minEvent = e;
+      }
+    });
+
+    if (minEvent) {
+      this.map.setView(minEvent.marker.getLatLng());
+      minEvent.marker.openPopup();
+
+      this.closeResults();
+    }
+
+  };
+
+  map.addControl(control);
+
+  // distance using spherical law of cosines; should be precise enough for our needs
+  function greatCircleAngle(lng1, lat1, lng2, lat2, cosLat1, sinLat1) {
+    var cosLngDelta = Math.cos((lng2 - lng1) * rad);
+    return Math.acos(greatCircleAnglePart(lat2, cosLat1, sinLat1, cosLngDelta));
+  }
+
+  // partial greatCircleDist to reduce trigonometric calculations
+  function greatCircleAnglePart(lat, cosLat, sinLat, cosLngDelta) {
+    var d = sinLat * Math.sin(lat * rad) +
+      cosLat * Math.cos(lat * rad) * cosLngDelta;
+    return Math.min(d, 1);
+  }
+
+  function angle(p1, p2) {
+    return greatCircleAngle(p1.lon, p1.lat, p2.lon, p2.lat, Math.cos(p1.lat * rad), Math.sin(p2.lat * rad));
+  }
+
 </script>
