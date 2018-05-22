@@ -308,8 +308,8 @@
   coordinates:
     lat: 43.212161
     lon: 2.353663
- - title: à Nice
-   description: 14h30 - Gare de Nice Ville
-   coordinates:
-     lat: 43.7043505
-     lon: 7.2619986
+- title: à Nice
+  description: 14h30 - Gare de Nice Ville
+  coordinates:
+    lat: 43.7043505
+    lon: 7.2619986
