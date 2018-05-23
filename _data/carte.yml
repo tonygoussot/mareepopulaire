@@ -521,3 +521,13 @@
   coordinates:
     lat:  43.64638
     lon:  0.586709
+- title: à Mende
+  description: 10h30 – Foirail
+  coordinates:
+    lat:  44.517611
+    lon:  3.501873
+- title: à Mulhouse
+  description: 10h – Place de la bourse
+  coordinates:
+    lat:  47.750839
+    lon:  7.335888
