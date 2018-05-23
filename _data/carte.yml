@@ -346,3 +346,24 @@
   coordinates:
     lat: 49.922992
     lon: 1.077483
+- title: à Orléans
+  description: 14h30 - Arrêt de tram Croix-St Marceau
+  coordinates:
+    lat: 47.902964
+    lon: 1.909251
+- title: à Sens
+  description: 10h - Devant la sous préfecture
+  coordinates:
+    lat: 47.902964
+    lon: 1.909251
+- title: à Dunkerque
+  description: 14h30 - Parc de la Maine
+  coordinates:
+    lat: 51.034368 
+    lon: 2.376776
+Obtenir l'altitude
+- title: à Rodez
+  description: 14h30 - Bourran
+  coordinates:
+    lat: 44.349389
+    lon: 2.575986
