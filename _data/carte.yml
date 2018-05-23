@@ -336,3 +336,13 @@
   coordinates:
     lat: 47.748252
     lon: -3.370245
+- title: à Quimperlé
+  description: 10h30 - Place de Gaulle
+  coordinates:
+    lat: 47.872586
+    lon: -3.547546
+- title: à Dieppe
+  description: 12h - Quai Henri IV
+  coordinates:
+    lat: 49.922992
+    lon: 1.077483
