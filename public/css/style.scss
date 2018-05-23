@@ -148,7 +148,7 @@ a {
   max-width: $column-width;
   background-color: #fff;
   color: #000;
-  overflow: auto;
+  overflow: visible;
 }
 
 .Article__content, .Article__title {
@@ -166,8 +166,6 @@ a {
 }
 
 .Article__content {
-  text-align: justify;
-  text-justify: inter-word;
   margin: 10px;
 }
 
@@ -280,16 +278,54 @@ a {
 }
 
 .Carte {
+  position: relative;
+}
+
+.Carte__vue {
   height: 350px;
 }
 
-.Carte h3 {
+.Carte__vue h3 {
   @extend %cursive;
   font-size: 2em;
   margin-bottom: 0 !important;
 }
 
-.Carte p {
+.Carte__vue p {
   font-size: 1.3em;
   margin-top: 0 !important;
+}
+
+.Carte form {
+  margin-top: 15px;
+}
+
+.Carte label {
+  font-size: 1em;
+  color: black;
+  font-weight: bold;
+}
+
+.Carte input {
+  margin-bottom: 0;
+}
+
+.Carte__resultats {
+  position: absolute;
+  z-index: 10;
+  background-color: white;
+  border: 1px solid #eee;
+  margin: 0;
+  left: 0;
+  right: 0;
+}
+
+.Carte__resultats a {
+  display: block;
+  width: 100%;
+  padding: 5px;
+
+  &:hover {
+    background-color: #CCC;
+  }
 }
