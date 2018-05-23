@@ -83,7 +83,9 @@ social_description: Pour l’égalité, la justice sociale et la solidarité, ma
                     <label for="commune">Cherchez une marée populaire près de chez vous</label>
                     <input type="text" id="commune" placeholder="Indiquez votre commune" autocomplete="off">
                 </form>
-                <ul class="Carte__resultats" style="display: none;"></ul>
+                <div class="Carte__resultats">
+                    <ul style="display: none;"></ul>
+                </div>
             </div>
         </div>
         <div class="Article card">
@@ -182,23 +184,9 @@ social_description: Pour l’égalité, la justice sociale et la solidarité, ma
 
   var rad = Math.PI / 180;
 
-  function chercheCommune(nom) {
-    var url = 'https://geo.api.gouv.fr/communes?nom=' + encodeURIComponent(nom) +
-      '&fields=nom,centre,codeDepartement&format=json&geometry=centre';
-    var headers = new Headers();
-    headers.append('Accept', 'application/json');
-
-    return rxjs.from(fetch(url, {headers: headers}).then(function (res) {
-      if (!res.ok) {
-        throw new Error('Problème de chargement');
-      }
-      return res.json();
-    }));
-  }
-
   var input = document.getElementById('commune');
   var form = input.parentNode;
-  var list = document.querySelector('.Carte__resultats');
+  var list = document.querySelector('.Carte__resultats ul');
 
   // prevent default behaviour for submit / click
   form.addEventListener('submit', function (e) {
@@ -207,23 +195,33 @@ social_description: Pour l’égalité, la justice sociale et la solidarité, ma
   list.addEventListener('click', function (e) {
     e.preventDefault();
   });
+  form.parentNode.addEventListener('click', function(e) {
+    e.stopPropagation();
+  });
 
+  // observable that fires when form is submitted (with enter)
   var submit$ = rxjs.fromEvent(form, 'submit').pipe(
     map(function (e) {
       return input.value;
     })
   );
 
+  // observable that fire whenever the value in the input field changes
   var change$ = rxjs.fromEvent(input, 'input').pipe(
     map(function (e) {
       return input.value;
     })
   );
 
+  // debounced version of change$ that won't fire if there has been a submit
   var debouncedChange$ = submit$.pipe(
-    switchMap(function() { return change$.pipe(debounceTime(300)) })
+    startWith(null),
+    switchMap(function () {
+      return change$.pipe(debounceTime(300))
+    })
   );
 
+  // observable that fire whenever a place is clicked ; value is the coordinates
   var listClick$ = rxjs.fromEvent(list, 'click').pipe(
     filter(function (e) {
       return !!e.target.dataset.x;
@@ -239,11 +237,16 @@ social_description: Pour l’égalité, la justice sociale et la solidarité, ma
     leafletMap.setView([event.coordinates.lat, event.coordinates.lon], 10);
   });
 
-  var autoCompletionResults$ = debouncedChange$.pipe(
-    merge(submit$),
-    switchMap(chercheCommune),
+  var autoCompletionResults$ = listClick$.pipe(
     startWith(null),
-    merge(listClick$.pipe(mapTo(null)))
+    merge(rxjs.fromEvent(document, 'click')),
+    switchMap(function() {
+      return debouncedChange$.pipe(
+        merge(submit$),
+        switchMap(chercheCommune),
+        startWith(null)
+      )
+    })
   );
 
   autoCompletionResults$.subscribe(function (results) {
@@ -253,12 +256,33 @@ social_description: Pour l’égalité, la justice sociale et la solidarité, ma
     }
 
     list.style.display = 'block';
-    list.innerHTML = results.slice(0, 5).map(function (r) {
-      return '<li><a href="#" data-x="' + r.centre.coordinates[0] + '" data-y="' + r.centre.coordinates[1] + '">' +
-        r.nom + ' (' + r.codeDepartement + ')</a></li>'
-    }).join('');
+
+    if (results.length) {
+      list.innerHTML = results.slice(0, 5).map(function (r) {
+        return '<li><a href="#" data-x="' + r.centre.coordinates[0] + '" data-y="' + r.centre.coordinates[1] + '">' +
+          r.nom + ' (' + r.codeDepartement + ')</a></li>'
+      }).join('');
+    } else {
+      list.innerHTML = '<li><a href="#">Pas de résultats pour cette recherche.</a></li>';
+    }
+  }, function(error) {
+    list.style.display = 'block';
+    list.innerHTML = '<li><a href="#">Problème de connexion...</a></li>';
   });
 
+  function chercheCommune(nom) {
+    var url = 'https://geo.api.gouv.fr/communes?nom=' + encodeURIComponent(nom) +
+      '&fields=nom,centre,codeDepartement&format=json&geometry=centre';
+    var headers = new Headers();
+    headers.append('Accept', 'application/json');
+
+    return rxjs.from(fetch(url, {headers: headers}).then(function (res) {
+      if (!res.ok) {
+        throw new Error('Problème de chargement');
+      }
+      return res.json();
+    }));
+  }
 
   const eligibleEvents = events.filter(function (e) {
     return !e.depart;
@@ -311,5 +335,4 @@ social_description: Pour l’égalité, la justice sociale et la solidarité, ma
 
     return R * c;
   }
-
 </script>
