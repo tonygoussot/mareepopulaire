@@ -161,11 +161,11 @@ social_description: Pour l’égalité, la justice sociale et la solidarité, ma
   var events = {{ site.data.carte | jsonify }};
 
   var map = rxjs.operators.map;
-  var mapTo = rxjs.operators.mapTo;
   var filter = rxjs.operators.filter;
   var merge = rxjs.operators.merge;
   var debounceTime = rxjs.operators.debounceTime;
   var switchMap = rxjs.operators.switchMap;
+  var switchMapTo = rxjs.operators.switchMapTo;
   var startWith = rxjs.operators.startWith;
 
   var leafletMap = L.map('carte-marees').setView([46.76996843356982, 3.251953125], 5);
@@ -216,9 +216,7 @@ social_description: Pour l’égalité, la justice sociale et la solidarité, ma
   // debounced version of change$ that won't fire if there has been a submit
   var debouncedChange$ = submit$.pipe(
     startWith(null),
-    switchMap(function () {
-      return change$.pipe(debounceTime(300))
-    })
+    switchMapTo(change$.pipe(debounceTime(300)))
   );
 
   // observable that fire whenever a place is clicked ; value is the coordinates
@@ -271,6 +269,10 @@ social_description: Pour l’égalité, la justice sociale et la solidarité, ma
   });
 
   function chercheCommune(nom) {
+    if (!nom.trim()) {
+        return rxjs.of(null);
+    }
+
     var url = 'https://geo.api.gouv.fr/communes?nom=' + encodeURIComponent(nom) +
       '&fields=nom,centre,codeDepartement&format=json&geometry=centre';
     var headers = new Headers();
