@@ -416,3 +416,103 @@
   coordinates:
     lat: 49.564133
     lon: 3.61989
+- title: à Moulins
+  description: 15h – Place d’Allier
+  coordinates:
+    lat:  46.568059
+    lon: 3.334417
+- title: à Charleville-Mézières
+  description: 10h – Place Nevers 
+  coordinates:
+    lat: 49.762085
+    lon: 4.726096
+- title: à Troyes
+  description: 10h30 – Place Alexandre Israël
+  coordinates:
+    lat:  48.297345
+    lon:  4.074401
+- title: à Najac
+  description: 11h30 - Kiosque
+  coordinates:
+    lat: 44.21953
+    lon: 1.978425
+- title: à Angoulême
+  description: 10h – Gare d’Angoulême
+  coordinates:
+    lat: 45.648377
+    lon: 0.156237
+- title: à La Rochelle
+  description: 10h30 – Aquarium La Rochelle 
+  coordinates:
+    lat: 46.160329
+    lon: -1.151139
+- title: à Bourges 
+  description: 10h30 – Place Séraucourt
+  coordinates:
+    lat: 47.081012
+    lon: 2.398782
+- title: à Vierzon
+  description: 9h30 – Sous préfecture 
+  coordinates:
+    lat: 47.221438
+    lon: 2.069791
+- title: à Bergerac
+  description: 10h – Palais de Justice 
+  coordinates:
+    lat: 44.853806
+    lon: 0.483392
+- title: à Périgueux
+  description: 10h - Palais de Justice
+  coordinates:
+    lat: 45.184029
+    lon: 0.721115
+- title: à Sarlat-la-Canéda
+  description: 10h – Place de la Rigaudie
+  coordinates:
+    lat: 44.890891
+    lon: 1.217292
+- title: à Béziers
+  description: 10h30 – Allée Paul Riquet
+  coordinates:
+    lat: 43.344233
+    lon: 3.215795
+- title: à Châteauroux
+  description: 10h30 – Gare de Châteauroux
+  coordinates:
+    lat: 46.811434
+    lon: 1.686779
+- title: à Voiron
+  description: 10h30 – Place de Lattre de Tassigny
+  coordinates:
+    lat: 45.362713
+    lon: 5.591349
+- title: à Lons-le-Saunier
+  description: 10h – Place de la Liberté
+  coordinates:
+    lat: 46.671361
+    lon: 5.550796
+- title: à Saint-Chamond
+  description: 18h – Conciergerie du jarez
+  coordinates:
+    lat: 45.476088
+    lon: 4.512712
+- title: à Angers
+  description: 10h30 – Place du Ralliement
+  coordinates:
+    lat: 47.471162
+    lon: -0.551826
+- title: à Alençon
+  description: 11h – 39 rue Saint-Blaise
+  coordinates:
+    lat: 48.432856
+    lon: 0.091266
+- title: à Villefranche-sur-Saône
+  description: 10h30 – Place des Arts
+  coordinates:
+    lat: 45.991471
+    lon: 4.718821
+- title: à Niort
+  description: 11h – Gare de Niort
+  coordinates:
+    lat: 46.323716
+    lon: -0.464777
