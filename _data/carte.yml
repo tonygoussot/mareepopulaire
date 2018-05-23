@@ -366,3 +366,35 @@
   coordinates:
     lat: 44.349389
     lon: 2.575986
+- title: à Guéret
+  description: 10h30 - Gare de Guéret
+  coordinates:
+    lat: 46.169599
+    lon: 1.871452
+- title: à Pamiers
+  description: 10h - Devant la gare de la sous-préfecture
+  coordinates:
+    lat: 43.114753
+    lon: 1.607953
+- title: à Poitiers
+  description: 14h - Place du Marché
+  coordinates:
+    lat: 46.580224 
+    lon: 0.340375
+- title: à Perpignan
+  description: 10h - Devant la gare de Perpignan
+  coordinates:
+    lat: 42.688659
+    lon: 2.894833
+- title: à Mont-de-Marsan
+  description: 10h - Devant la gare de Perpignan
+  coordinates:
+    lat: 43.893485
+    lon:  -0.499782
+- title: à Vannes
+  description: 9h30 - Porte Saint-Vincent
+  coordinates:
+    lat: 47.658236
+    lon: -2.760847
+
+    
