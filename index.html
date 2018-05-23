@@ -236,8 +236,7 @@ social_description: Pour l’égalité, la justice sociale et la solidarité, ma
   listClick$.subscribe(function (latLng) {
     const event = closestEvent(latLng);
     event.marker.openPopup();
-    leafletMap.setView([event.coordinates.lat, event.coordinates.lon]);
-    L.marker(latLng).addTo(leafletMap);
+    leafletMap.setView([event.coordinates.lat, event.coordinates.lon], 10);
   });
 
   var autoCompletionResults$ = debouncedChange$.pipe(
