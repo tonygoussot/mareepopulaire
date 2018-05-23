@@ -396,5 +396,9 @@
   coordinates:
     lat: 47.658236
     lon: -2.760847
-
+- title: à Belfort
+  description: 15h - Place Corbis
+  coordinates:
+    lat: 47.639674
+    lon: 6.863849
     
