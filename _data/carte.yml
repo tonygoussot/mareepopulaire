@@ -213,6 +213,7 @@
   coordinates:
     lat: 48.813055
     lon: 2.38822
+  depart: oui
 - title: à Le Havre
   description: 15h - Hôtel de ville
   coordinates:
@@ -223,11 +224,13 @@
   coordinates:
     lat: 48.863812
     lon: 2.448451
+  depart: oui
 - title: à Paris 19eme
   description: 12h - La Rotonde
   coordinates:
     lat: 48.882376
     lon: 2.382292
+  depart: oui
 - title: à Le Biollay
   description: 12h - La Rotonde
   coordinates:

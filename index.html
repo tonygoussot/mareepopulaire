@@ -261,7 +261,7 @@ social_description: Pour l’égalité, la justice sociale et la solidarité, ma
 
 
   const eligibleEvents = events.filter(function (e) {
-    return +e.description.split('h', 1)[0] > 12
+    return !e.depart;
   });
 
   function closestEvent(latLng) {
@@ -269,7 +269,6 @@ social_description: Pour l’égalité, la justice sociale et la solidarité, ma
 
     eligibleEvents.forEach(function (e) {
       d = haversineDistance(latLng, e.coordinates);
-      console.log(e.title, d);
       if (d < minDistance) {
         minDistance = d;
         minEvent = e;
@@ -299,7 +298,6 @@ social_description: Pour l’égalité, la justice sociale et la solidarité, ma
 
   // https://stackoverflow.com/questions/1502590/calculate-distance-between-two-points-in-google-maps-v3
   function haversineDistance(a, b) {
-    console.log(a, b);
     var aLat = a.latitude || a.lat;
     var bLat = b.latitude || b.lat;
     var aLng = a.longitude || a.lng || a.lon;
