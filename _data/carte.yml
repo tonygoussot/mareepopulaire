@@ -387,7 +387,7 @@
     lat: 42.688659
     lon: 2.894833
 - title: à Mont-de-Marsan
-  description: 10h - Devant la gare de Perpignan
+  description: 10h - Place Saint-Roch centre ville
   coordinates:
     lat: 43.893485
     lon:  -0.499782
@@ -531,3 +531,13 @@
   coordinates:
     lat:  47.750839
     lon:  7.335888
+- title: à Quimper
+  description: 15h - Gare de Quimper
+  coordinates:
+    lat:  47.994515
+    lon:  -4.092178
+- title: à Dieppe
+  description: 12h - Quai Henri IV
+  coordinates:
+    lat:  49.928482
+    lon:  1.081597
