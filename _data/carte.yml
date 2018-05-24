@@ -213,6 +213,7 @@
   coordinates:
     lat: 48.813055
     lon: 2.38822
+  depart: oui
 - title: à Le Havre
   description: 15h - Hôtel de ville
   coordinates:
@@ -223,11 +224,13 @@
   coordinates:
     lat: 48.863812
     lon: 2.448451
+  depart: oui
 - title: à Paris 19eme
   description: 12h - La Rotonde
   coordinates:
     lat: 48.882376
     lon: 2.382292
+  depart: oui
 - title: à Le Biollay
   description: 12h - La Rotonde
   coordinates:
@@ -289,7 +292,7 @@
     lat: 45.042768
     lon:  3.882936
 - title: à Lyon
-  description: 11h - Quais du Rhône 
+  description: 11h - Berges du Rhône, niveau Pont de la Guillotière
   coordinates: 
     lat: 45.764043
     lon: 4.835659
@@ -318,3 +321,213 @@
   coordinates:
     lat: 43.232951
     lon: 0.078082
+- title: à Thonon-les-Bains
+  description: 10h - Place des Arts puis au Belvédère
+  coordinates:
+    lat: 46.373565
+    lon: 6.477635
+- title: à Rennes
+  description: 14h - 66 mail francois mitterrand
+  coordinates:
+    lat: 48.117266
+    lon: -1.677793
+- title: à Lorient
+  description: 11h30 - Place de l'hôtel de ville
+  coordinates:
+    lat: 47.748252
+    lon: -3.370245
+- title: à Quimperlé
+  description: 10h30 - Place de Gaulle
+  coordinates:
+    lat: 47.872586
+    lon: -3.547546
+- title: à Dieppe
+  description: 12h - Quai Henri IV
+  coordinates:
+    lat: 49.922992
+    lon: 1.077483
+- title: à Orléans
+  description: 14h30 - Arrêt de tram Croix-St Marceau
+  coordinates:
+    lat: 47.902964
+    lon: 1.909251
+- title: à Sens
+  description: 10h - Devant la sous préfecture
+  coordinates:
+    lat: 47.902964
+    lon: 1.909251
+- title: à Dunkerque
+  description: 11h - Parc de la Marine
+  coordinates:
+    lat: 51.034368 
+    lon: 2.376776
+- title: à Rodez
+  description: 14h30 - Bourran
+  coordinates:
+    lat: 44.349389
+    lon: 2.575986
+- title: à Guéret
+  description: 10h30 - Gare de Guéret
+  coordinates:
+    lat: 46.169599
+    lon: 1.871452
+- title: à Pamiers
+  description: 10h - Devant la gare de la sous-préfecture
+  coordinates:
+    lat: 43.114753
+    lon: 1.607953
+- title: à Poitiers
+  description: 14h - Place du Marché
+  coordinates:
+    lat: 46.580224 
+    lon: 0.340375
+- title: à Perpignan
+  description: 10h - Devant la gare de Perpignan
+  coordinates:
+    lat: 42.688659
+    lon: 2.894833
+- title: à Mont-de-Marsan
+  description: 10h - Devant la gare de Perpignan
+  coordinates:
+    lat: 43.893485
+    lon:  -0.499782
+- title: à Vannes
+  description: 9h30 - Porte Saint-Vincent
+  coordinates:
+    lat: 47.658236
+    lon: -2.760847
+- title: à Belfort
+  description: 15h - Place Corbis
+  coordinates:
+    lat: 47.639674
+    lon: 6.863849
+- title: à Belley
+  description: 11h - Sous préfecture 
+  coordinates:
+    lat: 45.76096
+    lon: 5.686346
+- title: à Bourg-en-Bresse
+  description: 10h30 - Avenue du Champ de Foire
+  coordinates:
+    lat: 46.205168
+    lon: 5.225501
+- title: à Laon
+  description: 14h - Gare de Laon
+  coordinates:
+    lat: 49.564133
+    lon: 3.61989
+- title: à Moulins
+  description: 15h – Place d’Allier
+  coordinates:
+    lat:  46.568059
+    lon: 3.334417
+- title: à Charleville-Mézières
+  description: 10h – Place Nevers 
+  coordinates:
+    lat: 49.762085
+    lon: 4.726096
+- title: à Troyes
+  description: 10h30 – Place Alexandre Israël
+  coordinates:
+    lat:  48.297345
+    lon:  4.074401
+- title: à Najac
+  description: 11h30 - Kiosque
+  coordinates:
+    lat: 44.21953
+    lon: 1.978425
+- title: à Angoulême
+  description: 10h – Gare d’Angoulême
+  coordinates:
+    lat: 45.648377
+    lon: 0.156237
+- title: à La Rochelle
+  description: 10h30 – Aquarium La Rochelle 
+  coordinates:
+    lat: 46.160329
+    lon: -1.151139
+- title: à Bourges 
+  description: 10h30 – Place Séraucourt
+  coordinates:
+    lat: 47.081012
+    lon: 2.398782
+- title: à Vierzon
+  description: 9h30 – Sous préfecture 
+  coordinates:
+    lat: 47.221438
+    lon: 2.069791
+- title: à Bergerac
+  description: 10h – Palais de Justice 
+  coordinates:
+    lat: 44.853806
+    lon: 0.483392
+- title: à Périgueux
+  description: 10h - Palais de Justice
+  coordinates:
+    lat: 45.184029
+    lon: 0.721115
+- title: à Sarlat-la-Canéda
+  description: 10h – Place de la Rigaudie
+  coordinates:
+    lat: 44.890891
+    lon: 1.217292
+- title: à Béziers
+  description: 10h30 – Allée Paul Riquet
+  coordinates:
+    lat: 43.344233
+    lon: 3.215795
+- title: à Châteauroux
+  description: 10h30 – Gare de Châteauroux
+  coordinates:
+    lat: 46.811434
+    lon: 1.686779
+- title: à Voiron
+  description: 10h30 – Place de Lattre de Tassigny
+  coordinates:
+    lat: 45.362713
+    lon: 5.591349
+- title: à Lons-le-Saunier
+  description: 10h – Place de la Liberté
+  coordinates:
+    lat: 46.671361
+    lon: 5.550796
+- title: à Saint-Chamond
+  description: 18h – Conciergerie du jarez
+  coordinates:
+    lat: 45.476088
+    lon: 4.512712
+- title: à Angers
+  description: 10h30 – Place du Ralliement
+  coordinates:
+    lat: 47.471162
+    lon: -0.551826
+- title: à Alençon
+  description: 11h – 39 rue Saint-Blaise
+  coordinates:
+    lat: 48.432856
+    lon: 0.091266
+- title: à Villefranche-sur-Saône
+  description: 10h30 – Place des Arts
+  coordinates:
+    lat: 45.991471
+    lon: 4.718821
+- title: à Niort
+  description: 11h – Gare de Niort
+  coordinates:
+    lat: 46.323716
+    lon: -0.464777
+- title: à Auch
+  description: 11h – Place de Libération
+  coordinates:
+    lat:  43.64638
+    lon:  0.586709
+- title: à Mende
+  description: 10h30 – Foirail
+  coordinates:
+    lat:  44.517611
+    lon:  3.501873
+- title: à Mulhouse
+  description: 10h – Place de la bourse
+  coordinates:
+    lat:  47.750839
+    lon:  7.335888

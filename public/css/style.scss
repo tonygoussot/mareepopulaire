@@ -15,7 +15,12 @@ $fourth-color: #03A9F4;
 
 $column-width: 400px;
 
+*, ::before, ::after {
+  box-sizing: inherit;
+}
+
 html, body {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,6 +28,25 @@ html, body {
   font-family: 'Roboto', sans-serif;
   background-color: $background-color;
   color: white;
+  line-height: 1.5;
+}
+
+@media only screen and (min-width: 0) {
+  html {
+    font-size: 14px
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 14.5px
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 15px
+  }
 }
 
 div#root {
@@ -49,16 +73,54 @@ a {
   text-decoration: none;
 }
 
-.btn, .btn-large, .btn-small {
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.btn {
+  // display and sizing
+  display: inline-block;
+  border: 0;
+  border-radius: 2px;
+  height: 36px;
+  padding: 0 16px;
+
+  // color and shadow
   background-color: $tertiary-color;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  transition: background-color .2s ease-out;
+
+  // typography
+  line-height: 36px;
+  font-size: 14px;
+  outline: 0;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  letter-spacing: .5px;
+  text-transform: uppercase;
 }
 
 .btn:hover, .btn-large:hover, .btn-small:hover {
   background-color: lighten($tertiary-color, 10%);
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
 }
 
 .btn:focus, .btn-large:focus, .btn-small:focus {
   background-color: darken($tertiary-color, 10%);
+}
+
+.card {
+  border-radius: 2px;
+  position: relative;
+  margin: .5rem 0 1rem 0;
+  background-color: #fff;
+  -webkit-transition: -webkit-box-shadow .25s;
+  transition: -webkit-box-shadow .25s;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .2), 0 4px 20px 0 rgba(0, 0, 0, .19);
 }
 
 /**
@@ -72,7 +134,8 @@ a {
 .Header-title {
   @extend %cursive;
   font-size: 3em;
-  margin-bottom: 0;
+  line-height: 110%;
+  margin: 2.8rem 0 0 0;
 }
 
 .Header-header {
@@ -126,6 +189,16 @@ a {
   }
 }
 
+.Menu__link {
+  @extend .btn;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  transition: .3s ease-out;
+  z-index: 1;
+}
+
 /**
  * Intro
  */
@@ -148,7 +221,7 @@ a {
   max-width: $column-width;
   background-color: #fff;
   color: #000;
-  overflow: auto;
+  overflow: visible;
 }
 
 .Article__content, .Article__title {
@@ -166,8 +239,6 @@ a {
 }
 
 .Article__content {
-  text-align: justify;
-  text-justify: inter-word;
   margin: 10px;
 }
 
@@ -232,11 +303,6 @@ a {
   font-size: 1.4em;
 }
 
-.card {
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .2), 0 4px 20px 0 rgba(0, 0, 0, .19);
-  border-radius: 2px;
-}
-
 .Social {
   display: flex;
   flex-wrap: wrap;
@@ -280,16 +346,66 @@ a {
 }
 
 .Carte {
+  position: relative;
+}
+
+.Carte__vue {
   height: 350px;
 }
 
-.Carte h3 {
+.Carte__vue h3 {
   @extend %cursive;
   font-size: 2em;
   margin-bottom: 0 !important;
 }
 
-.Carte p {
+.Carte__vue p {
   font-size: 1.3em;
   margin-top: 0 !important;
+}
+
+.Carte form {
+  margin-top: 15px;
+}
+
+.Carte label {
+  font-size: 1em;
+  color: black;
+  font-weight: bold;
+}
+
+.Carte input {
+  margin: 0 0 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+  padding: 10px 5px;
+}
+
+.Carte__resultats {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.Carte__resultats ul {
+  position: absolute;
+  z-index: 10;
+  background-color: white;
+  border: 1px solid #eee;
+  margin: 0;
+  top: -10px;
+  left: 0;
+  right: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.Carte__resultats a {
+  display: block;
+  width: 100%;
+  padding: 5px;
+
+  &:hover {
+    background-color: #CCC;
+  }
 }

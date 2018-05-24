@@ -6,10 +6,8 @@ social_type: website
 social_description: Pour l’égalité, la justice sociale et la solidarité, marée populaire le samedi 26 mai
 ---
 <link rel="stylesheet" href="{{ site.baseurl }}/public/leaflet/leaflet.css">
-<link rel="stylesheet" href="{{ site.baseurl }}/public/leaflet/geosearch.css">
+<script src="{{ site.baseurl }}/public/rxjs.umd.min.js"></script>
 <script src="{{ site.baseurl }}/public/leaflet/leaflet.js"></script>
-<script src="{{ site.baseurl }}/public/leaflet/GeoSearch.js"></script>
-
 
 <div class="Intro">
     <div class="intro-col">
@@ -79,12 +77,15 @@ social_description: Pour l’égalité, la justice sociale et la solidarité, ma
             <div class="Article__title">
                 La marée populaire près de chez vous
             </div>
-            <div class="Article__content">
-                <div class="Carte" id="carte-marees"></div>
-                <p>
-                  <i>Pour trouver la marée populaire la plus proche de chez vous,
-                    cliquez sur la loupe et entrez votre adresse.</i>
-                </p>
+            <div class="Article__content Carte">
+                <div class="Carte__vue" id="carte-marees"></div>
+                <form>
+                    <label for="commune">Cherchez une marée populaire près de chez vous</label>
+                    <input type="text" id="commune" placeholder="Indiquez votre commune" autocomplete="off">
+                </form>
+                <div class="Carte__resultats">
+                    <ul style="display: none;"></ul>
+                </div>
             </div>
         </div>
         <div class="Article card">
@@ -157,16 +158,24 @@ social_description: Pour l’égalité, la justice sociale et la solidarité, ma
     </div>
 </div>
 <script>
-  var map = L.map('carte-marees').setView([46.76996843356982, 3.251953125], 5);
+  var events = {{ site.data.carte | jsonify }};
+
+  var map = rxjs.operators.map;
+  var filter = rxjs.operators.filter;
+  var merge = rxjs.operators.merge;
+  var debounceTime = rxjs.operators.debounceTime;
+  var switchMap = rxjs.operators.switchMap;
+  var switchMapTo = rxjs.operators.switchMapTo;
+  var startWith = rxjs.operators.startWith;
+
+  var leafletMap = L.map('carte-marees').setView([46.76996843356982, 3.251953125], 5);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Contributeurs <a href="https://www.openstreemap.org">OpenStreetMap</a>',
     maxZoom: 17
-  }).addTo(map);
-
-  var events = {{ site.data.carte | jsonify }};
+  }).addTo(leafletMap);
 
   events.forEach(function (event) {
-    event.marker = L.marker([event.coordinates.lat, event.coordinates.lon]).addTo(map);
+    event.marker = L.marker([event.coordinates.lat, event.coordinates.lon]).addTo(leafletMap);
     event.marker.bindPopup(
       '<h3>La marée populaire ' + event.title + '</h3>' +
       '<p>' + event.description + '</p>'
@@ -175,53 +184,157 @@ social_description: Pour l’égalité, la justice sociale et la solidarité, ma
 
   var rad = Math.PI / 180;
 
-  var provider = new GeoSearch.OpenStreetMapProvider();
-  var control = new GeoSearch.GeoSearchControl({
-    provider: provider,
-    searchLabel: 'Chercher une marée',
-    notFoundMessage: 'Désolé, votre adresse n\'a pas été trouvée.'
+  var input = document.getElementById('commune');
+  var form = input.parentNode;
+  var list = document.querySelector('.Carte__resultats ul');
+
+  // prevent default behaviour for submit / click
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+  });
+  list.addEventListener('click', function (e) {
+    e.preventDefault();
+  });
+  form.parentNode.addEventListener('click', function(e) {
+    e.stopPropagation();
   });
 
-  control.showResult = function(result, options) {
-    var lat = result.y * rad;
-    var cosLat = Math.cos(lat), sinLat = Math.sin(lat);
+  // observable that fires when form is submitted (with enter)
+  var submit$ = rxjs.fromEvent(form, 'submit').pipe(
+    map(function (e) {
+      return input.value;
+    })
+  );
 
-    var minEvent, minDistance = Infinity;
+  // observable that fire whenever the value in the input field changes
+  var change$ = rxjs.fromEvent(input, 'input').pipe(
+    map(function (e) {
+      return input.value;
+    })
+  );
 
-    var distances = events.forEach(function(e) {
-      var d = greatCircleAngle(result.x, result.y, e.coordinates.lon, e.coordinates.lat, cosLat, sinLat);
+  // debounced version of change$ that won't fire if there has been a submit
+  var debouncedChange$ = submit$.pipe(
+    startWith(null),
+    switchMapTo(change$.pipe(debounceTime(300)))
+  );
+
+  // observable that fire whenever a place is clicked ; value is the coordinates
+  var listClick$ = rxjs.fromEvent(list, 'click').pipe(
+    filter(function (e) {
+      return !!e.target.dataset.x;
+    }),
+    map(function (e) {
+      return L.latLng([+e.target.dataset.y, +e.target.dataset.x]);
+    })
+  );
+
+  listClick$.subscribe(function (latLng) {
+    const event = closestEvent(latLng);
+    event.marker.openPopup();
+    leafletMap.setView([event.coordinates.lat, event.coordinates.lon], 10);
+  });
+
+  var autoCompletionResults$ = listClick$.pipe(
+    startWith(null),
+    merge(rxjs.fromEvent(document, 'click')),
+    switchMap(function() {
+      return debouncedChange$.pipe(
+        merge(submit$),
+        switchMap(chercheCommune),
+        startWith(null)
+      )
+    })
+  );
+
+  autoCompletionResults$.subscribe(function (results) {
+    if (results === null) {
+      list.style.display = 'none';
+      return;
+    }
+
+    list.style.display = 'block';
+
+    if (results.length) {
+      list.innerHTML = results.slice(0, 5).map(function (r) {
+        return '<li><a href="#" data-x="' + r.centre.coordinates[0] + '" data-y="' + r.centre.coordinates[1] + '">' +
+          r.nom + ' (' + r.codeDepartement + ')</a></li>'
+      }).join('');
+    } else {
+      list.innerHTML = '<li><a href="#">Pas de résultats pour cette recherche.</a></li>';
+    }
+  }, function(error) {
+    list.style.display = 'block';
+    list.innerHTML = '<li><a href="#">Problème de connexion...</a></li>';
+  });
+
+  function chercheCommune(nom) {
+    if (!nom.trim()) {
+        return rxjs.of(null);
+    }
+
+    var url = 'https://geo.api.gouv.fr/communes?nom=' + encodeURIComponent(nom) +
+      '&fields=nom,centre,codeDepartement&format=json&geometry=centre';
+    var headers = new Headers();
+    headers.append('Accept', 'application/json');
+
+    return rxjs.from(fetch(url, {headers: headers}).then(function (res) {
+      if (!res.ok) {
+        throw new Error('Problème de chargement');
+      }
+      return res.json();
+    }));
+  }
+
+  const eligibleEvents = events.filter(function (e) {
+    return !e.depart;
+  });
+
+  function closestEvent(latLng) {
+    var d, minEvent, minDistance = Infinity;
+
+    eligibleEvents.forEach(function (e) {
+      d = haversineDistance(latLng, e.coordinates);
       if (d < minDistance) {
         minDistance = d;
         minEvent = e;
       }
     });
 
-    if (minEvent) {
-      this.map.setView(minEvent.marker.getLatLng());
-      minEvent.marker.openPopup();
-
-      this.closeResults();
-    }
-
-  };
-
-  map.addControl(control);
-
-  // distance using spherical law of cosines; should be precise enough for our needs
-  function greatCircleAngle(lng1, lat1, lng2, lat2, cosLat1, sinLat1) {
-    var cosLngDelta = Math.cos((lng2 - lng1) * rad);
-    return Math.acos(greatCircleAnglePart(lat2, cosLat1, sinLat1, cosLngDelta));
+    return minEvent;
   }
 
-  // partial greatCircleDist to reduce trigonometric calculations
-  function greatCircleAnglePart(lat, cosLat, sinLat, cosLngDelta) {
-    var d = sinLat * Math.sin(lat * rad) +
-      cosLat * Math.cos(lat * rad) * cosLngDelta;
-    return Math.min(d, 1);
+  // HAVERSINE DISTANCE
+  var atan2 = Math.atan2;
+  var cos = Math.cos;
+  var sin = Math.sin;
+  var sqrt = Math.sqrt;
+  var PI = Math.PI;
+
+  // (mean) radius of Earth (meters)
+  var R = 6378137;
+
+  function squared(x) {
+    return x * x
   }
 
-  function angle(p1, p2) {
-    return greatCircleAngle(p1.lon, p1.lat, p2.lon, p2.lat, Math.cos(p1.lat * rad), Math.sin(p2.lat * rad));
+  function toRad(x) {
+    return x * PI / 180.0
   }
 
+  // https://stackoverflow.com/questions/1502590/calculate-distance-between-two-points-in-google-maps-v3
+  function haversineDistance(a, b) {
+    var aLat = a.latitude || a.lat;
+    var bLat = b.latitude || b.lat;
+    var aLng = a.longitude || a.lng || a.lon;
+    var bLng = b.longitude || b.lng || b.lon;
+
+    var dLat = toRad(bLat - aLat);
+    var dLon = toRad(bLng - aLng);
+
+    var f = squared(sin(dLat / 2.0)) + cos(toRad(aLat)) * cos(toRad(bLat)) * squared(sin(dLon / 2.0));
+    var c = 2 * atan2(sqrt(f), sqrt(1 - f));
+
+    return R * c;
+  }
 </script>
