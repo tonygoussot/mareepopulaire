@@ -546,4 +546,58 @@
   coordinates:
     lat: 48.839695
     lon: 2.239912
-  depart: oui
+- title: à Mâcon
+  description: 14h30 - Place de la Barre
+  coordinates:
+    lon: 46.306884
+    lat: 4.828731
+- title: à Dreux
+  description: 15h - Devant le Beffroi
+  coordinates:
+    lon: 48.736134
+    lat: 1.370889
+- title: à Chartres
+  description: 14h30 - Place des Halles
+  coordinates:
+    lon: 48.443854
+    lat: 1.489012
+- title: à Montceau-les-Mines
+  description: 10h - Devant la Mairie
+  coordinates:
+    lon: 46.67413
+    lat: 4.362979
+- title: à Avignon
+  description: 10h30 - Gare centre
+  coordinates:
+    lon: 43.949317
+    lat: 4.805528
+- title: à Aurillac
+  description: 10h30 - Place des Droits de l'Homme
+  coordinates:
+    lon: 44.930953
+    lat: 2.444997
+- title: à Beauvais
+  description: 9h30 - Place Jeanne Hachette  
+  coordinates:
+    lon: 49.429539
+    lat: 2.080712
+- title: à Montataire
+  description: 10h - Parking Ambroise Croizat 
+  coordinates:
+    lon: 49.257575
+    lat: 2.435068
+- title: à Chalon-sur-Saône
+  description: 10h - Place de Beaune
+  coordinates:
+    lon: 46.780764
+    lat: 4.853947
+- title: à Annonay
+  description: 10h30 - Place de la Libération
+  coordinates:
+    lon: 45.239403
+    lat: 4.667349
+- title: à Roanne
+  description: 10h30 - Place de la Loire
+  coordinates:
+    lon: 46.034432
+    lat: 4.072695
