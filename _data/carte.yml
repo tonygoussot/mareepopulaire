@@ -540,4 +540,8 @@
   description: 12h - Quai Henri IV
   coordinates:
     lat:  49.928482
-    lon:  1.081597
+- title: à Boulogne-Billancourt
+  description: 13h45 - Marcel Sembat
+  coordinates:
+    lat:  48.839695
+    lon:  2.239912
