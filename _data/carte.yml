@@ -546,6 +546,7 @@
   coordinates:
     lat: 48.839695
     lon: 2.239912
+  depart: oui
 - title: à Mâcon
   description: 14h30 - Place de la Barre
   coordinates:
