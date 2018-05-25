@@ -603,7 +603,12 @@
     lat: 46.034432
     lon: 4.072695
 - title: à Tarare
-  description: 11h0 - Place de la Madeleine
+  description: 11h00 - Place de la Madeleine
   coordinates:
     lat: 45.89676 
     lon: 4.433425
+- title: à Dunkerque
+  description: 11h00 - Devant le Parc de la Marine, près du centre commercial Marine
+  coordinates:
+    lat: 51.034081
+    lon: 2.374116
