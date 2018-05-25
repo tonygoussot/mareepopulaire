@@ -379,6 +379,34 @@ ul {
   border: 1px solid #ccc;
   width: 100%;
   padding: 10px 5px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.Carte__spinner {
+  width: 26px;
+  height: 26px;
+
+  position: absolute;
+  right: 5px;
+  top: -42px;
+}
+
+.Carte__spinner.visible {
+  background-color: #333;
+  border-radius: 50%;
+  animation: spinner 1.0s infinite ease-in-out;
+
+}
+
+@keyframes spinner {
+  0% {
+    transform: scale(0.0);
+  }
+  100% {
+    transform: scale(1.0);
+    opacity: 0;
+  }
 }
 
 .Carte__resultats {
