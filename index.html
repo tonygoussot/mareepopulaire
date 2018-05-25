@@ -153,6 +153,16 @@ social_description: Pour l’égalité, la justice sociale et la solidarité, ma
                     <li>{{ signataire.nom }}</li>
                     {% endfor %}
                 </ul>
+                <hr>
+                <p>
+                  Les organisations suivantes, non signataires, ont
+                  appellé à manifester :
+                </p>
+                <ul class="Signataires">
+                    {% for signataire in site.data.appel_manifestation %}
+                    <li>{{ signataire.nom }}</li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     </div>
